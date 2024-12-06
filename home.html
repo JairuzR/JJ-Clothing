@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+
+<style>
+body{
+    animation: fadeInDown 1s;
+}
+
+.home {
+    text-align: center;
+    font-weight: 900; 
+}
+
+.home_banner-1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 350px;
+    overflow: hidden;
+}
+.home_banner-1-text {
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 25%;
+    transform: translate(-50%, -50);
+    will-change: transform;
+}
+
+.h_div-2 {
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 20px;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 400px;
+    margin: 0px auto;
+    overflow: hidden; /* Hide the overflowing images */
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth sliding effect */
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0; /* Prevent the images from shrinking */
+    object-fit: fill;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #717171;
+}
+</style>
+</head>
+
+<body id="top">
+
+    <div class="home_banner-1">
+        <img width="100%" style="object-fit: cover;" src="img/home/home-bg-1.jpg">
+        <div class="home_banner-1-text">
+            <h1 style="display: inline;">JJ<br>Store</h1>
+            <br>
+            <p style="display: inline;"><i>Dress to Express</i></p>
+        </div>
+    </div>
+
+    <div class="h_div-2">
+        <h1>Explore</h1>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="carousel-container">
+        <div class="carousel">            <!-- Replace the image sources with your actual images -->
+            <img src="img/home/carousel-1.jpg" alt="Image 1">
+            <img src="img/home/carousel-2.jpg" alt="Image 2">
+            <img src="img/home/carousel-3.jpg" alt="Image 3">
+        </div>
+
+        <!-- Controls for next and previous -->
+        <div class="controls">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;  // To track the current image index
+        const images = document.querySelectorAll('.carousel img');
+        const totalImages = images.length;
+        const carousel = document.querySelector('.carousel');
+        const dots = document.querySelectorAll('.dot');
+
+        // Show the next image in the carousel
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalImages;  // Loop back to the first image
+            updateCarousel();
+        }
+
+        // Show the previous image in the carousel
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;  // Loop back to the last image
+            updateCarousel();
+        }
+
+        // Update the carousel to show the current image
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Auto loop the carousel every 3 seconds
+        setInterval(nextSlide, 3000);
+
+        // Event listeners for next and previous buttons
+        document.querySelector('.next').addEventListener('click', nextSlide);
+        document.querySelector('.prev').addEventListener('click', prevSlide);
+
+        // Initial setup for the carousel
+        updateCarousel();
+
+    </script>
+
+</body>
+<footer height="15%" style="background-color: black; color: white; text-align: center; padding: 0.3%; font-size: .7em;">
+    <div class="foot_div">
+        <p>JJ Clothing Company</p><br>
+        <p>Email: jjclothing@company.com</p> • <p style="display: inline;">Contact: (+63) 912 345 6789</p><br>
+        <a href="home.html">Home</a> • 
+        <a href="shop-index.html">Shop</a> • 
+        <a href="about.html">About</a> • 
+        <a href="feedback.html">Feedback</a><br>
+        <a href="#top">Back to Top</a>
+    </div>
+</footer>
+</html>

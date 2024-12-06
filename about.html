@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About</title>
+    
+    <style>
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            animation: fadeInDown 1s;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: black;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            border-bottom: 1px solid #444;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            color: black;
+            background-color: #fff1a1;
+        }
+
+        /* Main Content Styles */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        h1.page-title {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+            color: #000000;
+        }
+
+        /* About Section */
+        .about_container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about_logo {
+            width: 200px;
+            height: auto;
+        }
+
+        .about_top {
+            margin-top: 20%;
+            text-align: center;
+        }
+
+        .company-name {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .team-members {
+            font-size: 1.2rem;
+            font-weight: lighter;
+        }
+
+        /* About, Vision, Mission, Purpose Sections */
+        section {
+            margin: 40px 20px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Vision, Mission, Purpose Section */
+        .vision, .mission, .purpose {
+            background-color: #f9f9f9;
+            border-left: 5px solid #fff1a1;
+        }
+
+        .vision h2, .mission h2, .purpose h2 {
+            color: #ecd034;
+        }
+
+        footer {
+            background-color: #2a2a2a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            display: block;
+            padding: 10px;
+            border: 1px none #fff1a1;
+            background-image: linear-gradient(to bottom, #ffd700, #ffffff);
+            /* box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); */
+            animation: fadeInDown 1s;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#about">About Us</a>
+        <a href="#members">Members</a>
+        <a href="#vision">Vision</a>
+        <a href="#mission">Mission</a>
+        <a href="#purpose">Purpose</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <h1 class="page-title">About Us</h1>
+        </header>
+
+        <section class="about_container" id="about">
+            <img class="about_logo" src="img/home/jj_logo.png" alt="JJ Clothing Logo">
+            <h3 class="company-name">JJ Clothing Company</h3>
+        </section>
+
+        <section class="about_top" id="members">
+            <h2>Key Members</h2>
+            <p class="team-members">
+                Alisa Abalde<br>
+                Mikaela Johanna Almalvez<br>
+                Palema Guia Ampo<br>
+                Regine Mae Castueras<br>
+                KC Daluz<br>
+                Jian Navale
+            </p>
+        </section>
+
+        <section class="about">
+            <h2>About Us</h2>
+            <p>We believe that fashion is more than just clothing--it is a way to express oneself, a mark of uniqueness, and a dedication to sustainability and quality. Our company, which was founded with a love of design and innovation, makes clothing that tells a narrative by blending classic style with modern trends.
+            
+            Our dedication to ethical and sustainable methods motivates us to minimize waste, source materials responsibly, and put the welfare of all those engaged in our production process. We aim to provide products that are not only stylish but also comfortable to wear, whether they are standout sections, formal wear, or casual wear.
+            
+            Join us on our journey to redefine fashion with purpose, creativity, and authenticity.</p>
+        </section>
+
+        <section class="vision" id="vision">
+            <h2>VISION</h2>
+            <p>To become a global leader in ethical fashion by promoting self-expression and confidence through trendy, high-quality, and sustainable clothes.</p>
+        </section>
+
+        <section class="mission" id="mission">
+            <h2>MISSION</h2>
+            <p>Our mission is to create and manufacture classic, innovative clothing that encourages people to express who they are while promoting sustainability, ethical behavior, and excellent client service.</p>
+        </section>
+
+        <section class="purpose" id="purpose">
+            <h2>PURPOSE</h2>
+            <p>The purpose of this website is to offer a clothing shopping experience by providing customers with a curated selection of clothing and garments that align with their unique style preferences and needs. Our platform is designed to deliver a more personalized experience by focusing on quality, uniqueness, and customer-centric options. Each item is carefully chosen to ensure that it meets high standards of style and craftsmanship, giving customers a distinctive collection that they might not find on typical e-commerce sites. With an intuitive user interface, customers can easily navigate, select, and purchase items that truly resonate with their personal taste, making this platform more than just a shopping site—it's a destination for fashion discovery.</p>
+        </section>
+
+        <section class="contact-info" id="contact">
+            <h2>Contact Us:</h2>
+            <br>
+        
+            <ul style="list-style-type: none;">
+                <li><b>Business Email: </b><br>jjstore@company.com</li>
+                <li><b>Teleplone: </b><br>(+63) 912 345 6789</li>
+                <li><b>Hotline: </b><br>123-456-789</li>
+                <li><b>Address: </b>Musuan, Maramag, Bukidnon</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+      {
+        "name": "Drawstring Front Flounce Sleeve Asymmetrical",
+        "price": 390.00,
+        "description": "A chic blouse with drawstring detailing at the front, flounce sleeves, and an asymmetrical hem, offering a trendy and unique silhouette.",
+        "image": "img/shop/female/tops_long_sleeve/Brown offshie top.jpg"
+      },
+      {
+      "name": "Cider Satin Bell Sleeve Corset",
+      "price": 400.00,
+      "description": "A satin corset top with bell sleeves, offering a chic and elegant look for special occasions.",
+      "image": "img/shop/female/tops_long_sleeve/Greeny top.jpg"
+      },
+      {
+      "name": "Two-Tone Ruffle Trim Tie Neck",
+      "price": 430.00,
+      "description": "Stylish blouse with two-tone fabric, ruffle trim, and a tie neck design for a fashionable, feminine look.",
+      "image": "img/shop/female/tops_long_sleeve/Korean long sleeve top.jpg"
+      }
+]

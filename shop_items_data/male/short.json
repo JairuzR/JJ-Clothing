@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Beige Maong",
+    "price": 120.00,
+    "description": "Light beige denim-style shorts, sturdy and casual.",
+    "image": "img/shop/male/short/Beige maong short.jpg"
+  },
+  {
+    "name": "Trouser Style",
+    "price": 100.00,
+    "description": "Tailored shorts with a polished, formal look.",
+    "image": "img/shop/male/short/Trouser style short.jpg"
+  },
+  {
+    "name": "White Cotton",
+    "price": 130.00,
+    "description": "Soft white shorts, perfect for comfort and ease.",
+    "image": "img/shop/male/short/White cotton short.jpg"
+  }
+]

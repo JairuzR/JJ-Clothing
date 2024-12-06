@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Store - Male Section</title>
+
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .storenav {
+            background-color: rgb(200, 216, 255);
+        }
+
+        /* General Grid Layout */
+        .container {
+            animation: fadeInDown 1s;
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Responsive Layout Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr; /* 1 item per row on small screens */
+            }
+        }
+
+        .item-card {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .item-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border-color: #ffe760;
+        }
+
+        .item-card img {
+            width: 30%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        .item-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.3em;
+            color: #333;
+        }
+
+        .item-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .item-card .price {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 1.1em;
+        }
+
+        .item-card .price::before {
+            content: "Php ";
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- Navigation -->
+    <nav class="storenav">
+        <ul class="store-links">
+            <li><a href="shop-male.html" target="storeFrame">MALE</a></li>
+            <li><a href="shop-female.html" target="storeFrame">FEMALE</a></li>
+        </ul>
+    </nav>
+
+    <h1>Male Section</h1>
+
+    <h2>Jacket</h2>
+    <div class="container" id="items-container-1">
+        <!-- Items will be loaded here -->
+    </div>
+
+    <h2>Short</h2>
+    <div class="container" id="items-container-2">
+        <!-- Items will be loaded here -->
+    </div>
+
+    <h2>Pants</h2>
+    <div class="container" id="items-container-3">
+        <!-- Items will be loaded here -->
+    </div>
+
+    <h2>Tops</h2>
+    <div class="container" id="items-container-4">
+        <!-- Items will be loaded here -->
+    </div>
+
+    <script>
+        // Function to fetch and display items
+        function loadItems(category, containerId) {
+            fetch(`shop_items_data/male/${category}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById(containerId);
+                    data.forEach(item => {
+                        // Create item card
+                        const itemCard = document.createElement('div');
+                        itemCard.className = 'item-card';
+                        itemCard.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}">
+                            <h3>${item.name}</h3>
+                            <p>${item.description}</p>
+                            <p class="price">${item.price.toFixed(2)}</p>
+                        `;
+                        container.appendChild(itemCard);
+                    });
+                })
+                .catch(error => console.error('Error loading items:', error));
+        }
+
+        // Load items for each category
+        loadItems('jacket', 'items-container-1');
+        loadItems('short', 'items-container-2');
+        loadItems('pants', 'items-container-3');
+        loadItems('tops', 'items-container-4');
+    </script>
+</body>
+<footer height="15%" style="background-color: black; color: white; text-align: center; padding: 0.3%; font-size: .7em;">
+    <div class="foot_div">
+        <p>JJ Clothing Company</p><br>
+        <p>Email: jjclothing@company.com</p> • <p style="display: inline;">Contact: (+63) 912 345 6789</p><br>
+        <a href="home.html">Home</a> • 
+        <a href="shop-index.html">Shop</a> • 
+        <a href="about.html">About</a> • 
+        <a href="feedback.html">Feedback</a><br>
+        <a href="#top">Back to Top</a>
+    </div>
+</footer>
+</html>

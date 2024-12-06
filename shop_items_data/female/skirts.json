@@ -1,0 +1,20 @@
+[
+      {
+        "name": "Blue Flowery Sketch Frilled Maxi",
+        "price": 180.00,
+        "description": "Flowing maxi skirt featuring a delicate flower sketch design with frilled edges, perfect for a soft, feminine look.",
+        "image": "img/shop/female/skirts/Blue floral long skirt.jpg"
+      },
+      {
+      "name": "Sunny Days Retro Wide-Leg",
+      "price": 220.00,
+      "description": "Embrace vintage flair with these retro-inspired wide-leg pants, designed for a relaxed and stylish vibe. Perfect for adding an indie touch to your wardrobe.",
+      "image": "img/shop/female/skirts/Greeny long skirt.jpg"
+      },
+      {
+      "name": "Yellow Floral Fish Tail",
+      "price": 240.00,
+      "description": "A lovely yellow floral skirt with a fish tail hem and an elastic waistband for a comfortable, flattering fit. Ideal for a countryside-inspired look.",
+      "image": "img/shop/female/skirts/Yellow long skirt with slit.jpg"
+      }
+]

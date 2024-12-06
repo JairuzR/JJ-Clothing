@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Army Green Cargo",
+    "price": 300.00,
+    "description": "Classic military-style cargo pants in green",
+    "image": "img/shop/male/pants/Army green cargo pants_.jpg"
+  },
+  {
+    "name": "White Cargo",
+    "price": 320.00,
+    "description": "Casual white cargo pants with a rugged look.",
+    "image": "img/shop/male/pants/Dirty white cargo pants_.jpg"
+  },
+  {
+    "name": "Gray Cargo",
+    "price": 320.00,
+    "description": "Neutral-toned cargo pants, versatile for any outfit.",
+    "image": "img/shop/male/pants/Gray cargo pants.jpg"
+  }
+]

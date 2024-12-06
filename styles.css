@@ -1,0 +1,125 @@
+html{
+    scroll-behavior: smooth;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Container to wrap the navbar and iframe to fill 100% height */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Take full height */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black; /* Background of the navbar */
+    padding: 0px 30px;
+}
+
+.navbar img {
+    height: 50px; /* Adjust the size of the logo */
+    width: auto; /* Keeps the aspect ratio of the logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Arrange items horizontally */
+    justify-content: right; /* Move the items to the right */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between links */
+}
+
+.nav-links a {
+    border-radius: 5px; /* Adds curve to the border */
+    text-decoration: none; /* Remove underline */
+    color: white; /* Default text color */
+    font-size: 16px; /* Font size */
+    padding: 5px 10px; /* Add padding around text */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-links a:hover {
+    color: black; /* Change text color on hover */
+    background-color: #fff1a1; /* Add a background color on hover */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    /* height: 600px; */
+    border: none;
+    overflow-y: auto;
+    overflow-y: hidden;
+}
+
+/* Keyframes animation */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.foot_div a, .foot_div p {
+    text-decoration: none;
+    color: white;
+    display: inline;
+    transform: text-decoration 0.3s ease;
+}
+
+.foot_div a:hover {
+    text-decoration: underline;
+}
+
+
+/* For store */
+       
+.storenav { /* Background of the storenav */
+    padding: 15px 20px;
+}
+
+.store-links {
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Move the items to the right */
+}
+
+.store-links li {
+    margin: 0 15px; /* Space between links */
+}
+
+.store-links a {
+    border-radius: 5px; /* Adds curve to the border */
+    text-decoration: none; /* Remove underline */
+    color: rgb(35, 35, 35); /* Default text color */
+    font-size: 16px; /* Font size */
+    padding: 5px 10px; /* Add padding around text */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.store-links a:hover {
+    color: rgb(35, 35, 35); /* Change text color on hover */
+    background-color: #fff; /* Add a background color on hover */
+    border-radius: 5px; /* Optional: rounded corners */
+}

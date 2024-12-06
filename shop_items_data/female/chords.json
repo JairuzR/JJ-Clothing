@@ -1,0 +1,20 @@
+[
+      {
+        "name": "Houndstooth Elegance",
+        "price": 400.00,
+        "description": "Chic houndstooth outfit, perfect for formal or casual occasions.",
+        "image": "img/shop/female/chords/1733319212524.jpg"
+      },
+      {
+      "name": "Violet Luxe",
+      "price": 350.00,
+      "description": "Bold and classy outfit with textured fabric, perfect for making a statement.",
+      "image": "img/shop/female/chords/1733319218498.jpg"
+      },
+      {
+      "name": "Plaid Charm",
+      "price": 430.00,
+      "description": "Vintage-inspired plaid dress with modern cutouts and a belted skirt.",
+      "image": "img/shop/female/chords/1733319243063.jpg"
+      }
+]

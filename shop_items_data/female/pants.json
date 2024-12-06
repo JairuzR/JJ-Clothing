@@ -1,0 +1,20 @@
+[
+      {
+        "name": "High-Waist Wide-Leg Palazzo",
+        "price": 300.00,
+        "description": "Comfortable high-waisted trousers with a wide-leg design, perfect for a casual and stylish look. Ideal for relaxed days or layering with other outfits.",
+        "image": "img/shop/female/pants/Highwaist brown trouser.jpg"
+      },
+      {
+      "name": "High-Waisted Business Palazzo",
+      "price": 290.00,
+      "description": "Elegant, high-waisted palazzo trousers designed for business casual looks. Features comfortable fabric, pockets, and a flattering silhouette perfect for summer office wear or professional outings.",
+      "image": "img/shop/female/pants/Highwaist trouser_.jpg"
+      },
+      {
+      "name": "Tailored Wool-Blend",
+      "price": 280.00,
+      "description": "Stylish wool-blend trousers with a tailored fit, offering both elegance and comfort.",
+      "image": "img/shop/female/pants/Highwaisted trouser.jpg"
+      }
+]
