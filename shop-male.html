@@ -5,46 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Store - Male Section</title>
-
     <style>
-        h2 {
-            text-align: center;
-        }
-
-        h1 {
-            text-align: center;
-            margin: 20px 0;
-            color: #333;
-        }
-
-        .storenav {
-            background-color: rgb(200, 216, 255);
-        }
-
-        /* General Grid Layout */
+        h2 { text-align: center; }
+        h1 { text-align: center; margin: 20px 0; color: #333; }
+        .storenav { background-color: rgb(200, 216, 255); }
         .container {
             animation: fadeInDown 1s;
             width: 90%;
             margin: auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding: 20px;
         }
-
-        /* Responsive Layout Adjustments */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                grid-template-columns: 1fr; /* 1 item per row on small screens */
-            }
-        }
-
+        @media (max-width: 768px) { .container { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .container { grid-template-columns: 1fr; } }
         .item-card {
             border: 2px solid #ddd;
             border-radius: 5px;
@@ -53,13 +28,11 @@
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
-
         .item-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             border-color: #ffe760;
         }
-
         .item-card img {
             width: 30%;
             height: auto;
@@ -68,33 +41,57 @@
             border-radius: 3px;
             margin-bottom: 10px;
         }
+        .item-card h3 { margin: 10px 0 5px; font-size: 1.3em; color: #333; }
+        .item-card p { margin: 5px 0; color: #555; }
+        .item-card .price { font-weight: bold; color: #007bff; font-size: 1.1em; }
+        .item-card .price::before { content: "Php "; }
 
-        .item-card h3 {
-            margin: 10px 0 5px;
-            font-size: 1.3em;
-            color: #333;
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
         }
-
-        .item-card p {
-            margin: 5px 0;
-            color: #555;
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            position: relative;
+            text-align: center;
         }
-
-        .item-card .price {
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
             font-weight: bold;
-            color: #007bff;
-            font-size: 1.1em;
+            cursor: pointer;
         }
-
-        .item-card .price::before {
-            content: "Php ";
+        .close:hover,
+        .close:focus { color: black; text-decoration: none; }
+        #confirm-buy {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
         }
     </style>
 </head>
-
 <body id="top">
 
-    <!-- Navigation -->
     <nav class="storenav">
         <ul class="store-links">
             <li><a href="shop-male.html" target="storeFrame">MALE</a></li>
@@ -105,37 +102,41 @@
     <h1>Male Section</h1>
 
     <h2>Jacket</h2>
-    <div class="container" id="items-container-1">
-        <!-- Items will be loaded here -->
-    </div>
+    <div class="container" id="items-container-1"></div>
 
     <h2>Short</h2>
-    <div class="container" id="items-container-2">
-        <!-- Items will be loaded here -->
-    </div>
+    <div class="container" id="items-container-2"></div>
 
     <h2>Pants</h2>
-    <div class="container" id="items-container-3">
-        <!-- Items will be loaded here -->
-    </div>
+    <div class="container" id="items-container-3"></div>
 
     <h2>Tops</h2>
-    <div class="container" id="items-container-4">
-        <!-- Items will be loaded here -->
+    <div class="container" id="items-container-4"></div>
+
+    <!-- Modal for selected items -->
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Selected Items</h2>
+            <ul id="selected-items-list" style="text-align: left; margin-bottom: 20px;"></ul>
+            <button id="confirm-buy">Confirm Buy</button>
+        </div>
     </div>
 
     <script>
-        // Function to fetch and display items
-        function loadItems(category, containerId) {
-            fetch(`shop_items_data/male/${category}.json`)
+        // Function to fetch and display items with checkboxes
+        function loadItems(category, containerId, basePath = "shop_items_data/male") {
+            fetch(`${basePath}/${category}.json`)
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById(containerId);
                     data.forEach(item => {
-                        // Create item card
                         const itemCard = document.createElement('div');
                         itemCard.className = 'item-card';
                         itemCard.innerHTML = `
+                            <label style="display: block; margin-bottom: 10px;">
+                                <input type="checkbox" style="margin-right: 10px;"> Select
+                            </label>
                             <img src="${item.image}" alt="${item.name}">
                             <h3>${item.name}</h3>
                             <p>${item.description}</p>
@@ -147,14 +148,56 @@
                 .catch(error => console.error('Error loading items:', error));
         }
 
-        // Load items for each category
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("item-modal");
+            const closeModal = modal.querySelector(".close");
+            const buyButton = document.createElement("button");
+            buyButton.id = "buy-button";
+            buyButton.textContent = "Buy";
+            buyButton.style.position = "fixed";
+            buyButton.style.bottom = "20px";
+            buyButton.style.right = "20px";
+            buyButton.style.padding = "20px 40px";
+            buyButton.style.backgroundColor = "#ffd900";
+            buyButton.style.color = "#000";
+            buyButton.style.border = "none";
+            buyButton.style.borderRadius = "5px";
+            buyButton.style.cursor = "pointer";
+            buyButton.style.fontSize = "1em";
+            document.body.appendChild(buyButton);
+
+            closeModal.addEventListener("click", () => { modal.style.display = "none"; });
+
+            buyButton.addEventListener("click", () => {
+                const selectedItems = [];
+                document.querySelectorAll(".item-card input[type='checkbox']:checked").forEach(checkbox => {
+                    const card = checkbox.closest(".item-card");
+                    const itemName = card.querySelector("h3").textContent;
+                    selectedItems.push(itemName);
+                });
+
+                if (selectedItems.length > 0) {
+                    const list = document.getElementById("selected-items-list");
+                    list.innerHTML = selectedItems.map(item => `<li>${item}</li>`).join("");
+                    modal.style.display = "block";
+                } else {
+                    alert("No items selected. Please select items to buy.");
+                }
+            });
+
+            modal.querySelector("#confirm-buy").addEventListener("click", () => {
+                alert("Thank you for your purchase!");
+                modal.style.display = "none";
+            });
+        });
+
         loadItems('jacket', 'items-container-1');
         loadItems('short', 'items-container-2');
         loadItems('pants', 'items-container-3');
         loadItems('tops', 'items-container-4');
     </script>
 </body>
-<footer height="15%" style="background-color: black; color: white; text-align: center; padding: 0.3%; font-size: .7em;">
+<footer style="background-color: black; color: white; text-align: center; padding: 0.3%; font-size: .7em;">
     <div class="foot_div">
         <p>JJ Clothing Company</p><br>
         <p>Email: jjclothing@company.com</p> • <p style="display: inline;">Contact: (+63) 912 345 6789</p><br>
